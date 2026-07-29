@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trocaletra — desembaralhador de palavras em português</title>
+<meta name="description" content="Digite letras embaralhadas e descubra todas as palavras válidas em português que dá pra formar com elas. Grátis, sem cadastro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Work+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">desembaralhador de palavras · pt-br</p>
+    <h1 class="scramble-title" id="scrambleTitle" aria-label="Trocaletra"></h1>
+    <p class="tagline">Digite as letras embaralhadas e veja <strong>todas as palavras válidas em português</strong> que dá pra formar com elas — do maior anagrama até a palavrinha de duas letras que salva sua jogada.</p>
+  </header>
+
+  <main class="tool">
+    <label class="field-label" for="lettersInput">Suas letras embaralhadas</label>
+    <input id="lettersInput" class="letter-input" type="text" placeholder="ex: sartelo" autocomplete="off" spellcheck="false" maxlength="20">
+    <div class="tile-row" id="tilePreview"></div>
+
+    <div class="filters">
+      <div>
+        <label class="field-label" for="fStarts">Começa com</label>
+        <input id="fStarts" type="text" maxlength="6" placeholder="opcional">
+      </div>
+      <div>
+        <label class="field-label" for="fContains">Contém</label>
+        <input id="fContains" type="text" maxlength="6" placeholder="opcional">
+      </div>
+      <div>
+        <label class="field-label" for="fEnds">Termina com</label>
+        <input id="fEnds" type="text" maxlength="6" placeholder="opcional">
+      </div>
+    </div>
+
+    <label class="toggle-row">
+      <input type="checkbox" id="fExact">
+      usar todas as letras (só anagramas completos)
+    </label>
+
+    <div class="status-line" id="statusLine"></div>
+
+    <div class="results" id="results"></div>
+  </main>
+
+  <footer>
+    Lista de palavras: <a href="https://github.com/pythonprobr/palavras" target="_blank" rel="noopener">pythonprobr/palavras</a> (baseada no corretor pt_BR do LibreOffice, licença MPL-2.0) — pode conter lacunas ou regionalismos. Pontuação por letra é uma estimativa lúdica, sem relação com marcas registradas de jogos de tabuleiro.
+  </footer>
+</div>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>
